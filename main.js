@@ -12,7 +12,6 @@ window.onload = () => {
 // busca pokemon na POKE API
 function searchPokemon() {
   let pokemon = document.querySelector('#inputPokemon').value
-
   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`).then(Response => {
     return Response.json()
   }).then(finalObject => {
@@ -25,13 +24,5 @@ function searchPokemon() {
 
 // funções de envio do formulario
 document.querySelector('#buttonSearch').addEventListener('click', searchPokemon)
-document.querySelector('#buttonSearch').addEventListener('keypress', function(e)
-{
-  if (e.keyCode == 13)
-  {
-    searchPokemon()
-  }
-})
-
 
 
